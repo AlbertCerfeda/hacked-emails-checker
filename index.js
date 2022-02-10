@@ -39,9 +39,11 @@ config.email_check.forEach(stdout_breaches_for)
 function stdout_breaches_for(email) {
     breaches_for_account(email)
         .then((breaches)=>{
-            console.log(`Breaches for '${email}'`)
 
-            if(breaches.length < 1) return
+            //console.log(breaches)
+            if(breaches.length<1&&config.suppress_empty) return
+
+            console.log(`Breaches for '${email}'`)
 
             const date = new Date()
             for(var i = 0; i < breaches.length; i++) {
