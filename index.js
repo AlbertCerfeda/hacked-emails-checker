@@ -54,6 +54,9 @@ function stdout_breaches_for(email) {
                             `${recent?` ${Colors.BgRed}*NEW*${Colors.Reset} `:"       "}`+
                             `${breach.BreachDate}  ${Colors.BgYellow}${breach.Domain}${Colors.Reset}`)
             }
+        },(error)=>{
+            console.log(`Breaches for '${email}'`)
+            console.log(`\t # ${error.message}# `)
         }).catch((err)=>console.log)
 }
 
@@ -74,7 +77,9 @@ function breaches_for_account(email) {
                 response_string += d;
             })
             res.on('end', ()=>{
-                resolve(JSON.parse(response_string))
+                const resp = JSON.parse(response_string?response_string:"[]")
+                if(resp.statusCode!==undefined) reject(resp)
+                else resolve(resp)
             })
         })
 
