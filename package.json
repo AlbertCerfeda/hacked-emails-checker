@@ -1,7 +1,7 @@
 {
   "dependencies": {
   },
-  "name": "hacked-emails-checker",
+  "name": "haveibeenpwned-hacked-checker",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlbertCerfeda/hacked-emails-checker.git"
+    "url": "git+https://github.com/AlbertCerfeda/haveibeenpwned-hacked-checker.git"
   },
   "author": "Albert Cerfeda",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlbertCerfeda/hacked-emails-checker/issues"
+    "url": "https://github.com/AlbertCerfeda/haveibeenpwned-hacked-checker/issues"
   },
-  "homepage": "https://github.com/AlbertCerfeda/hacked-emails-checker#readme",
+  "homepage": "https://github.com/AlbertCerfeda/haveibeenpwned-hacked-checker#readme",
   "description": ""
 }
