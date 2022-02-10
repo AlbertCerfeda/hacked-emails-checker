@@ -62,9 +62,10 @@ function stdout_breaches_for(email) {
             }
             resolve()
             },(error)=>{
-            console.log(`Breaches for '${email}'`)
-            console.log(`\t # ${error.message}# `)
-            resolve()
+                if(config.suppress_error) {resolve();return}
+                console.log(`Breaches for '${email}'`)
+                console.log(`\t # ${error.message}# `)
+                resolve()
         }).catch((err)=>console.log)
     })
 }

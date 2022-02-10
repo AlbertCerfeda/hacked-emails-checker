@@ -5,6 +5,8 @@ const settings = {
     ],
     // Doesn't print "Breaches for XXX" if there arent any breaches
     suppress_empty : true,
+    // Doesn't print "Breaches for XXX" if the request returns an error
+    suppress_error : true,
     // Shows *NEW* alert on breach if it was added less than X days ago.
     new_alert_days: 30,
     // Your haveibeenpwned.com API key.
