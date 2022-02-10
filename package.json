@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+  },
+  "name": "hacked-emails-checker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertCerfeda/hacked-emails-checker.git"
+  },
+  "author": "Albert Cerfeda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlbertCerfeda/hacked-emails-checker/issues"
+  },
+  "homepage": "https://github.com/AlbertCerfeda/hacked-emails-checker#readme",
+  "description": ""
+}
