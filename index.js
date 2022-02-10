@@ -31,17 +31,21 @@ const Colors = {
 }
 
 
-console.log(`${Colors.BgCyan} == PWNAGE CHECKER ==${Colors.Reset}`)
-config.email_check.forEach(stdout_breaches_for)
-
-
+async function run() {
+    console.log(`${Colors.BgCyan} == PWNAGE CHECKER ==${Colors.Reset}`)
+    for (idx in config.email_check) {
+        await stdout_breaches_for(config.email_check[idx])
+    }
+}
+run()
 
 function stdout_breaches_for(email) {
-    breaches_for_account(email)
-        .then((breaches)=>{
+    return new Promise((resolve,reject)=>{
+        breaches_for_account(email)
+            .then((breaches)=>{
 
             //console.log(breaches)
-            if(breaches.length<1&&config.suppress_empty) return
+            if(breaches.length<1&&config.suppress_empty) {resolve(); return}
 
             console.log(`Breaches for '${email}'`)
 
@@ -53,13 +57,16 @@ function stdout_breaches_for(email) {
 
                 let recent = new Date(breach.AddedDate).getTime() + (1000*60*60*24*config.new_alert_days) >= date.getTime()
                 console.log(`\t${i!=breaches.length-1?'├':'└'}`+
-                            `${recent?` ${Colors.BgRed}*NEW*${Colors.Reset} `:"       "}`+
-                            `${breach.BreachDate}  ${Colors.BgYellow}${breach.Domain}${Colors.Reset}`)
+                    `${recent?` ${Colors.BgRed}*NEW*${Colors.Reset} `:"       "}`+
+                    `${breach.BreachDate}  ${Colors.BgYellow}${breach.Domain}${Colors.Reset}`)
             }
-        },(error)=>{
+            resolve()
+            },(error)=>{
             console.log(`Breaches for '${email}'`)
             console.log(`\t # ${error.message}# `)
+            resolve()
         }).catch((err)=>console.log)
+    })
 }
 
 function breaches_for_account(email) {
