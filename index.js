@@ -78,7 +78,7 @@ function breaches_for_account(email) {
             method: 'GET',
             headers: {
                 'hibp-api-key' : config.API_KEY,
-                'user-agent' : "idk"
+                'user-agent' : "pwned-emails-checker"
             }
         }
         const req = https.request(reqHeader, res => {
