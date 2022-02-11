@@ -48,7 +48,7 @@ function stdout_breaches_for(email) {
             //console.log(breaches)
             if(breaches.length<1&&config.suppress_empty) {resolve(); return}
 
-            console.log(`Breaches for '${email}'`)
+            console.log(`Breaches for ${Colors.Bright}'${email}'${Colors.Reset}`)
 
             const date = new Date()
             for(var i = 0; i < breaches.length; i++) {
@@ -64,7 +64,7 @@ function stdout_breaches_for(email) {
             resolve()
             },(error)=>{
                 if(config.suppress_error) {resolve();return}
-                console.log(`Breaches for '${email}'`)
+                console.log(`Breaches for ${Colors.FgRed}'${email}'${Colors.Reset}`)
                 console.log(`\t # ${error.message}# `)
                 resolve()
         }).catch((err)=>console.log)
