@@ -35,12 +35,13 @@ async function run() {
     console.log(`${Colors.BgCyan} == PWNAGE CHECKER ==${Colors.Reset}`)
     for (idx in config.email_check) {
         await stdout_breaches_for(config.email_check[idx])
+
     }
 }
 run()
 
 function stdout_breaches_for(email) {
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve)=>{
         breaches_for_account(email)
             .then((breaches)=>{
 
@@ -83,19 +84,15 @@ function breaches_for_account(email) {
         }
         const req = https.request(reqHeader, res => {
             let response_string = ""
-            res.on('data', d => {
-                response_string += d;
-            })
-            res.on('end', ()=>{
-                const resp = JSON.parse(response_string?response_string:"[]")
-                if(resp.statusCode!==undefined) reject(resp)
-                else resolve(resp)
-            })
-        })
 
-        req.on('error', error => {
-            console.log(error)
-            reject(error)
+            res.on('data', d => { response_string += d })
+            res.on('end', () => {
+                const resp = JSON.parse(response_string?response_string:"[]")
+                setTimeout(()=>{
+                    if(resp.statusCode!==undefined) reject(resp)
+                    else resolve(resp)
+                },config.rate_limit)
+            })
         })
         req.end()
     })

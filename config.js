@@ -10,7 +10,10 @@ const settings = {
     // Shows *NEW* alert on breach if it was added less than X days ago.
     new_alert_days: 30,
     // Your haveibeenpwned.com API key.
-    API_KEY: ""
+    API_KEY: "",
+
+    // Limits the script to max 1 request per X milliseconds
+    rate_limit : 1550
 }
 
 
