@@ -1,7 +1,7 @@
 {
   "dependencies": {
   },
-  "name": "haveibeenpwned-hacked-checker",
+  "name": "haveibeenpwned-breach-checker",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlbertCerfeda/haveibeenpwned-hacked-checker.git"
+    "url": "git+https://github.com/AlbertCerfeda/haveibeenpwned-breach-checker.git"
   },
   "author": "Albert Cerfeda",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlbertCerfeda/haveibeenpwned-hacked-checker/issues"
+    "url": "https://github.com/AlbertCerfeda/haveibeenpwned-breach-checker/issues"
   },
-  "homepage": "https://github.com/AlbertCerfeda/haveibeenpwned-hacked-checker#readme",
+  "homepage": "https://github.com/AlbertCerfeda/haveibeenpwned-breach-checker#readme",
   "description": ""
 }
