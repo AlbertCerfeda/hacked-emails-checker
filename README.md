@@ -1,7 +1,7 @@
 # pwned emails checker
 <img src="./res/sampleoutput.png" height="150">\
 \
-Simple script that checks through the [haveineepwned API](https://haveibeenpwned.com) if any provided email accounts have been compromised in a data breach.
+Simple script that checks through the [haveibeenpwned API](https://haveibeenpwned.com) if any provided email accounts have been compromised in a data breach.
 
 ## Config file
 *config.js*
