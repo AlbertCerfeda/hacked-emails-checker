@@ -22,7 +22,7 @@ const settings = {
 }
 ```
 **email_check**\
-Array containing the 
+Array containing the accounts to check breaches for
 
 **new_alert_days**\
 Shows `*NEW*` alert on breach if it was added less than X days ago.
